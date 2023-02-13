@@ -120,7 +120,7 @@
                                 content: '';
                                 height: 24px;
                                 width: 24px;
-                                background-image: url(/images/start-icon-blue.png);
+                                background-image: url(./images/start-icon-blue.png);
                                 background-repeat: no-repeat;
                                 background-size: contain;
                                 display: inline-block;
@@ -147,7 +147,7 @@
                             position: absolute;
                             top: 0;
                             z-index: -1;
-                            background-image: url(/images/crossed-blue-bg.png);
+                            background-image: url(./images/crossed-blue-bg.png);
                             background-repeat: no-repeat;
                             background-size: contain;
                             background-position: right;
@@ -159,7 +159,7 @@
                     .llp-banner-slide__wraper {
                         .slide-inner {
                             &:after {
-                                background-image: url(/images/crossed-blue-bg-3.png);
+                                background-image: url(./images/crossed-blue-bg-3.png);
                             }
 
                             .banner-image {
