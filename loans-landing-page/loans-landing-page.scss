@@ -35,6 +35,8 @@
 .llp-highlight-underline {
     display: inline-flex;
     position: relative;
+    justify-content: center;
+
 
     &:before {
         content: '';
@@ -44,6 +46,12 @@
         height: 7px;
         background: #FCD800;
         z-index: -1;
+    }
+    @media(max-width:768px){
+        &:before{
+            height: 3px;
+            bottom: 1px;
+        }
     }
 }
 
