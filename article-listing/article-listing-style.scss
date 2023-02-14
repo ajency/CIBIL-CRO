@@ -33,6 +33,12 @@ $grey: #707070;
     white-space: nowrap;
     border: 0;
     outline: none;
+
+    &.disabled{
+        background-color: #DDD;
+        color: $grey !important;
+        pointer-events: none;
+    }
 }
 
 .section_heading {
@@ -49,6 +55,70 @@ $grey: #707070;
     margin: auto;
     text-align: center;
     margin-bottom: 40px;
+}
+
+
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background-color: #00000099;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    
+    &.showPopup{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &_body{
+        width: calc(100% - 40px);
+        background-color: $grey;
+        max-width: 977px;
+        height: 550px;
+        position: relative;
+
+        .close{
+            position: absolute;
+            right: 16px;
+            top: 16px;
+            display: block;
+            cursor: pointer;
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .video_player{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            iframe{
+                width: 100% !important;
+                height: 100% !important;
+            }
+        }
+    }
+
+    @media (max-width: 768px){
+        &_body{
+            height: 400px;
+        }
+    }
+
+    @media (max-width: 500px){
+        &_body{
+            height: 300px;
+        }
+    }
 }
 
 @media (max-width: 768px){
@@ -261,6 +331,7 @@ $grey: #707070;
                 width: 16px;
                 min-width: 16px;
                 margin-right: 10px;
+                cursor: pointer;
                 input[type=checkbox]{
                     -webkit-appearance: none;
                     appearance: none;
@@ -282,10 +353,12 @@ $grey: #707070;
                         left: 0;
                         top: 0;
                         margin: 0;
+                        cursor: pointer;
 
                         svg {
                             position: relative;
                             top: -1px;
+                            cursor: pointer;
                         }
                     }
 

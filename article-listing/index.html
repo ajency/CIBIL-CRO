@@ -30,7 +30,7 @@
                 <p class="section_heading">Latest Articles</p>
                 <p class="section_description">Discover the secrets to building & maintaining good credit, managing debt & achieving financial freedom with our newest articles.</p>
                 <div class="article_listing_section__grid">
-                    <div class="article_card">
+                    <div class="article_card" data-source="https://www.youtube.com/embed/kVxTrhojpFI">
                         <img src="./img/article1.png" alt="" class="article_card__img">
                         <div class="article_card__content">
                             <p class="name">The Importance of Credit Utilization</p>
@@ -38,7 +38,7 @@
                             <span class="tag">Credit Health</span>
                         </div>
                     </div>
-                    <div class="article_card">
+                    <div class="article_card" data-source="https://www.youtube.com/embed/bY_gRApfoJk">
                         <img src="./img/article2.png" alt="" class="article_card__img">
                         <div class="article_card__content">
                             <p class="name">Understanding Your CIBIL Report</p>
@@ -46,7 +46,7 @@
                             <span class="tag">Credit Health</span>
                         </div>
                     </div>
-                    <div class="article_card">
+                    <div class="article_card" data-source="https://www.youtube.com/embed/moQPCw1N4ps">
                         <img src="./img/article3.png" alt="" class="article_card__img">
                         <div class="article_card__content">
                             <p class="name">Achieving Financial Freedom</p>
@@ -54,7 +54,7 @@
                             <span class="tag">Credit Health</span>
                         </div>
                     </div>
-                    <div class="article_card">
+                    <div class="article_card" data-source="https://www.youtube.com/embed/T30ZwW5mW4w">
                         <img src="./img/article4.png" alt="" class="article_card__img">
                         <div class="article_card__content">
                             <p class="name">The Role of Credit Score in Getting Approved for a Loan</p>
@@ -62,7 +62,7 @@
                             <span class="tag">Credit Health</span>
                         </div>
                     </div>
-                    <div class="article_card">
+                    <div class="article_card" data-source="https://www.youtube.com/embed/Nt5xQf4S_1k">
                         <img src="./img/article5.png" alt="" class="article_card__img">
                         <div class="article_card__content">
                             <p class="name">The Future of Credit Scoring and Its Impact on Loan Approval</p>
@@ -70,7 +70,7 @@
                             <span class="tag">Credit Health</span>
                         </div>
                     </div>
-                    <div class="article_card">
+                    <div class="article_card" data-source="https://www.youtube.com/embed/m2RmrioWzrI">
                         <img src="./img/article6.png" alt="" class="article_card__img">
                         <div class="article_card__content">
                             <p class="name">Debt Management 101</p>
@@ -78,7 +78,7 @@
                             <span class="tag">Credit Health</span>
                         </div>
                     </div>
-                    <div class="article_card">
+                    <div class="article_card" data-source="https://www.youtube.com/embed/dR55RH46ZMo">
                         <img src="./img/article7.png" alt="" class="article_card__img">
                         <div class="article_card__content">
                             <p class="name">Common Credit Score Myths</p>
@@ -86,7 +86,7 @@
                             <span class="tag">Credit Health</span>
                         </div>
                     </div>
-                    <div class="article_card">
+                    <div class="article_card" data-source="https://www.youtube.com/embed/XnE_IG_aEsI">
                         <img src="./img/article8.png" alt="" class="article_card__img">
                         <div class="article_card__content">
                             <p class="name">Understanding Your CIBIL Report</p>
@@ -94,7 +94,7 @@
                             <span class="tag">Credit Health</span>
                         </div>
                     </div>
-                    <div class="article_card">
+                    <div class="article_card" data-source="https://www.youtube.com/embed/BPDvwr7kblc">
                         <img src="./img/article9.png" alt="" class="article_card__img">
                         <div class="article_card__content">
                             <p class="name">Debt Management 101</p>
@@ -141,5 +141,23 @@
                 <p>Disclaimer: The information posted on this blog (Information) is prepared by TransUnion CIBIL Limited (TU CIBIL). This Information is for generic informational purposes only and is meant for consumer education and awareness about credit scores, credit history and credit reporting. The Information posted on the blog does not constitute credit advice and the user will need to consider the same and take independent informed decisions . No part of this Information may be quoted out of context, distorted ,distributed, published and/ or reproduced in any form and manner whatsoever. Consumers are advised that the Credit Information Reports (CIRs) prepared by TU CIBIL are based on collation of information, substantially, provided by credit institutions who are members with TU CIBIL. TU CIBIL is not responsible and /or liable for errors and/or omissions caused by inaccurate or inadequate information submitted to it by credit institutions. TU CIBIL does not guarantee the adequacy or completeness of the Information and/or its suitability for any specific purpose nor is TU CIBIL responsible for any access or reliance on the Information. TU CIBIL expressly disclaims all such liability. Further, this Information is based on the data available with TU CIBIL at the time of publication and therefore may not be up-to-date.</p>
             </div>
         </section>
+
+        <!-- Video Popup -->
+        <div class="popup" id="videoPopup">
+            <div class="popup_body">
+                <span class="close" onclick="closePopup('videoPopup')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <circle cx="15" cy="15" r="15" fill="white"/>
+                    <path d="M9.70508 9.70703L20.2933 20.2953" stroke="#2C2C2C"/>
+                    <path d="M20.291 9.70703L9.70278 20.2953" stroke="#2C2C2C"/>
+                    </svg>
+                </span>
+                <div class="video_player" id="videoPlayer">
+                    
+                </div>
+            </div>
+        </div>
+
+        <script src="./article-listing.js" type="text/javascript" defer />
     </body>
 </html>
