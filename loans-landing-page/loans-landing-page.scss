@@ -1,26 +1,27 @@
-.container{
-    padding-right: 20px;
-    padding-left: 20px;
+.loansLandingPage {
+    .container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+            width: 1220px;
+        }
+    }
 }
 
 //typography
 
 .llp {
-    &-h2 {
-        &-bold {
-            font-family: 'Intro';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 32px;
-            line-height: 44px;
-            letter-spacing: -0.01em;
-            color: #000000;
-            margin-bottom: 20px;
-            margin-top: 0px;
-        }
-    }
-
     &-body {
+        font-family: 'Intro';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        color: #2C2C2C;
+
         &-medium {
             font-family: 'Intro';
             font-style: normal;
@@ -44,6 +45,21 @@
         }
     }
 
+    &-h2 {
+        &-bold {
+            font-family: 'Intro';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 44px;
+            letter-spacing: -0.01em;
+            color: #000000;
+            margin-bottom: 20px;
+            margin-top: 0px;
+        }
+    }
+
+
     &-h3 {
         &-regular {
             font-family: 'Intro';
@@ -52,6 +68,19 @@
             font-size: 24px;
             line-height: 30px;
             color: #000000;
+            margin-bottom: 20px;
+            margin-top: 0px;
+        }
+    }
+
+    &-h4 {
+        &-bold {
+            font-family: 'Intro';
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.02em;
+            color: #2C2C2C;
             margin-bottom: 20px;
             margin-top: 0px;
         }
@@ -156,7 +185,7 @@
                                 content: '';
                                 height: 24px;
                                 width: 24px;
-                                background-image: url(./images/start-icon-blue.png);
+                                background-image: url(./images/star-icon-blue.svg);
                                 background-repeat: no-repeat;
                                 background-size: contain;
                                 display: inline-block;
@@ -170,7 +199,7 @@
         }
     }
 
-    .llp-slick-dots{
+    .llp-slick-dots {
         margin-top: -40px;
     }
 
@@ -242,7 +271,8 @@
                 }
             }
         }
-        .llp-slick-dots{
+
+        .llp-slick-dots {
             margin-top: -30px;
         }
     }
@@ -334,7 +364,8 @@
         margin-left: -10px;
         margin-right: -10px;
 
-        &:before, &:after{
+        &:before,
+        &:after {
             content: '';
             position: absolute;
             width: 20px;
@@ -342,16 +373,18 @@
             z-index: 1;
             top: 0px;
         }
-        &:before{
+
+        &:before {
             left: 0px;
             background: linear-gradient(90deg, #FFFFFF 20.68%, rgba(255, 255, 255, 0) 90.93%);
         }
-        &:after{
+
+        &:after {
             right: 0px;
             background: linear-gradient(-90deg, #FFFFFF 20.68%, rgba(255, 255, 255, 0) 90.93%);
         }
 
-        .slick-track{
+        .slick-track {
             display: flex;
             align-items: flex-end;
         }
@@ -423,7 +456,8 @@
                     .logo-container {
                         &__wraper {
                             padding: 8px;
-                            .tag{
+
+                            .tag {
                                 font-size: 10px;
                                 line-height: 10px;
                                 margin-bottom: 0px;
@@ -436,32 +470,172 @@
         }
     }
 }
-.llp-bg-lightblue{
+
+.llp-bg-lightblue {
     background: #F6F7FC;
 }
+
 // loan products section
-.llp-loan-products-section{
+.llp-loan-products-section {
     margin-top: 60px;
-    .llp-h2-bold, .llp-body-medium{
+    margin-bottom: 50px;
+
+    .llp-h2-bold,
+    .llp-body-medium {
         text-align: center;
     }
-    .llp-h2-bold{
+
+    .llp-h2-bold {
         margin-bottom: 10px;
     }
-    .llp-body-medium{
+
+    .llp-body-medium {
         margin-bottom: 30px;
     }
+
+    .llp-loan-products {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: end;
+
+        .llp-loan-product {
+            &__wraper {
+                .tag {
+                    background-image: url(./images/tag-bg-yellow.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: right center;
+                    text-align: center;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    padding: 0px 12px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: 0.02em;
+                    color: #000000;
+                    font-family: 'Intro';
+                    position: relative;
+                    margin-bottom: -14px;
+                    right: 14px;
+                }
+
+                .product {
+                    background: #FFFFFF;
+                    border-radius: 8px;
+                    padding: 20px;
+                    min-height: 214px;
+
+                    .product-title {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        text-transform: uppercase;
+
+                        &:before {
+                            content: '';
+                            display: inline-flex;
+                            width: 44px;
+                            height: 44px;
+                            background-color: rgba(0, 166, 202, 0.1);
+                            margin-right: 10px;
+                            border-radius: 100%;
+                            background-image: url(./images/star-icon-blue.svg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 27px 26px;
+                        }
+                    }
+
+                    .product-desc {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+    }
+
     @media(max-width:767.98px) {
         margin-top: 40px;
-        .llp-h2-bold{
+
+        .llp-h2-bold {
             font-weight: 700;
             font-size: 24px;
             line-height: 30px;
             text-align: center;
             letter-spacing: 0.02em;
         }
-        .llp-body-medium{
+
+        .llp-body-medium {
             margin-bottom: 20px;
+        }
+
+        .llp-loan-products {
+            grid-template-columns: 1fr;
+
+            .llp-loan-product {
+                &__wraper {
+                    .tag {
+                        right: 11px;
+                    }
+
+                    .product {
+                        min-height: auto;
+
+                        .product-desc {
+                            padding-left: 54px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//video player section
+.llp-video-player-section {
+    &__wraper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .features{
+            .feature {
+                display: grid;
+                grid-template-columns: 41px 1fr;
+                grid-gap: 30px;
+                .icon{
+                    width: 100%;
+                }
+                .llp-body-bold{
+                    margin-bottom: 6px;
+                }
+                &:not(:last-child){
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+    @media(max-width:768px){
+        &__wraper{
+            grid-template-columns: 1fr;
+            .features{
+                grid-area: 2;
+                .feature{
+                    margin-top: 40px;
+                    margin-bottom: 30px;
+                    grid-gap: 20px;
+                    .llp-body-bold{
+                        margin-bottom: 10px;
+                    }
+                    &:not(:last-child){
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .llp-video-player{
+                grid-area: 1;
+            }
         }
     }
 }
