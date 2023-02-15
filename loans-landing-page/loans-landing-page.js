@@ -158,3 +158,29 @@ $('#llp-getintouch-form').submit( function(e){
   //submit form
   formSubmit(form)
 });
+
+//tabs
+function alignTabIndicator(tabIndicator, activeTab){
+  let activeTabNew = $(activeTab).parents('.nav-item')
+  let activeTabLeftPosition = activeTabNew.position().left
+  console.log(activeTabLeftPosition)
+  $(tabIndicator).css('left', activeTabLeftPosition)
+}
+
+alignTabIndicator('#documentationPopup .tab-indicator', '#documentationPopup .nav-item.active .nav-link')
+
+$('a[data-toggle="pill"]').on('shown.bs.tab', function (event) {
+  event.target // newly activated tab
+  event.relatedTarget // previous active tab
+  alignTabIndicator('#documentationPopup .tab-indicator', event.target)
+})
+
+
+ $(".llp-popup-body .tab-content").scroll(function() {
+        var scroll = $(this).scrollTop();
+        if (scroll >= 10) {
+            $(this).addClass("scrolled");
+        } else {
+            $(this).removeClass("scrolled");
+        }
+ });
