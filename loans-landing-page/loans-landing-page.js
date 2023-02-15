@@ -76,3 +76,85 @@ $('.video-play-button').click( function() {
   $(videoPlayerParent).find('#llp-yt-player').fadeIn()
   playVideo()
 })
+
+//get in touch form
+
+//patterns
+let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+
+//messages
+let invalidEmailMessage = "Please enter a valid email address"
+let requiredInputMessage = "This field is required"
+
+//show error
+function showError(field, message){
+  $(field).parents('.input-group').addClass('error')
+  $(field).next('.message').text(message).addClass('error').show('medium')
+}
+
+//show success
+function showSucces(field){
+  $(field).parents('.input-group').removeClass('error')
+  $(field).next('.message').hide('medium').removeClass('error')
+}
+
+//form submit
+function formSubmit(form){
+  let errorCount = $(form).find('.input-group.error').length
+
+  if(errorCount == 0){
+    $(form).unbind().submit()
+  }
+}
+
+// check valid email
+function emailValidation(input, errorMessage) {
+
+  if ($(input).val().match(emailPattern)) {
+    $(input).next('.message').hide("medium")
+    showSucces(input)
+    return true;
+  }
+  else if($(input).val() == ''){
+    showError(input, requiredInputMessage)
+    return false
+  } else {
+    showError(input, errorMessage)
+    return false
+  }
+}
+
+//email onchange
+$('#llp_email').on('change keyup', function(e){
+  emailValidation(e.target, invalidEmailMessage)
+})
+
+//cosent validation
+function consentValidation(consentField){
+  if(consentField.checked){
+    $(consentField).parents('.input-group').removeClass('error')
+  }else{
+    $(consentField).parents('.input-group').addClass('error')
+  }
+}
+
+//consent onchange
+$('#llp_concent').change(function(e){
+  consentValidation(e.target)
+});
+
+$('#llp-getintouch-form').submit( function(e){
+  e.preventDefault();
+  let form = '#'+ e.target.id
+
+  //email field validation
+  let emailField = $(form).find('#llp_email')
+  emailValidation(emailField, invalidEmailMessage)
+
+  //concent checkbox validation
+  let consentField = $(form).find('#llp_concent')
+  consentValidation(consentField)
+
+  //submit form
+  formSubmit(form)
+});
