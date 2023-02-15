@@ -119,6 +119,7 @@
         &-20 {
             margin-bottom: 20px !important;
         }
+
         &-30 {
             margin-bottom: 30px !important;
         }
@@ -1159,6 +1160,11 @@
         border-radius: 12px;
     }
 
+    .modal-lg {
+
+        max-width: 780px;
+    }
+
     &-header {
         position: relative;
 
@@ -1258,9 +1264,11 @@
                 grid-gap: 10px;
                 align-items: center;
                 justify-content: center;
-                .icon{
+
+                .icon {
                     display: flex;
-                    img{
+
+                    img {
                         width: 100%;
                     }
                 }
@@ -1269,7 +1277,7 @@
     }
 
     .tab-content {
-        height: 397px;
+        height: 471px;
         overflow-y: scroll;
         margin-right: -30px;
         padding-right: 30px;
@@ -1290,6 +1298,7 @@
             background: #ACACAC;
             border-radius: 32px;
         }
+
         /* &.scrolled{
 
             &::-webkit-scrollbar {
@@ -1348,22 +1357,27 @@
             }
         }
     }
-    @media(max-width:991.98px){
-        &-header{
-            .close{
+
+    @media(max-width:991.98px) {
+        &-header {
+            .close {
                 right: 20px;
                 top: 20px;
             }
         }
-        &-body{
+
+        &-body {
             padding: 0px 20px 0px;
         }
-        .tab-content{
+
+        .tab-content {
             margin-right: -20px;
-            .tab-pane{
-                .llp-timeline{
-                    .timeline-content{
-                        .title{
+            max-height: 75vh;
+
+            .tab-pane {
+                .llp-timeline {
+                    .timeline-content {
+                        .title {
                             font-size: 16px;
                             margin-bottom: 6px;
                         }
@@ -1371,18 +1385,22 @@
                 }
             }
         }
-        .nav-pills{
+
+        .nav-pills {
             padding-top: 66px;
-            .tab-indicator{
+
+            .tab-indicator {
                 max-width: 50%;
             }
-            .nav-item{
-                &:not(:last-child){
-                    &:after{
+
+            .nav-item {
+                &:not(:last-child) {
+                    &:after {
                         display: none;
                     }
                 }
-                .nav-link{
+
+                .nav-link {
                     padding: 0px 10px 14px;
                     grid-template-columns: 18px 1fr;
                 }
