@@ -160,14 +160,14 @@ $('#llp-getintouch-form').submit( function(e){
 });
 
 //tabs
-function alignTabIndicator(tabIndicator, activeTab){
+/* function alignTabIndicator(tabIndicator, activeTab){
   let activeTabNew = $(activeTab).parents('.nav-item')
   let activeTabLeftPosition = activeTabNew.position().left
+  let activeTabWidth = activeTabNew.width()
   console.log(activeTabLeftPosition)
   $(tabIndicator).css('left', activeTabLeftPosition)
+  $(tabIndicator).css('width', activeTabWidth)
 }
-
-alignTabIndicator('#documentationPopup .tab-indicator', '#documentationPopup .nav-item.active .nav-link')
 
 $('a[data-toggle="pill"]').on('shown.bs.tab', function (event) {
   event.target // newly activated tab
@@ -175,6 +175,12 @@ $('a[data-toggle="pill"]').on('shown.bs.tab', function (event) {
   alignTabIndicator('#documentationPopup .tab-indicator', event.target)
 })
 
+$('#documentationPopup').on('shown.bs.modal', function () {
+  alignTabIndicator('#documentationPopup .tab-indicator', '#documentationPopup .nav-item.active .nav-link')
+})
+$('#documentationPopup').on('hide.bs.modal', function () {
+  alignTabIndicator('#documentationPopup .tab-indicator', '#documentationPopup .nav-item.active .nav-link')
+}) */
 
  $(".llp-popup-body .tab-content").scroll(function() {
         var scroll = $(this).scrollTop();
@@ -184,3 +190,13 @@ $('a[data-toggle="pill"]').on('shown.bs.tab', function (event) {
             $(this).removeClass("scrolled");
         }
  });
+
+ //faq
+$(".panel-collapse").on("show.bs.collapse", function () {
+  $(this).prev().addClass("show");
+  $(this).addClass("show");
+});
+$(".panel-collapse").on("hide.bs.collapse", function () {
+  $(this).prev().removeClass("show");
+  $(this).removeClass("show");
+});

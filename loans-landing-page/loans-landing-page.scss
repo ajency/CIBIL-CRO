@@ -1083,9 +1083,11 @@
     line-height: 24px;
     letter-spacing: 0.02em;
     text-decoration-line: underline;
-    text-transform: uppercase;
     color: #00A6CA !important;
     cursor: pointer;
+    &.grey5{
+        color: #707070 !important;
+    }
 }
 
 //documentation section
@@ -1094,6 +1096,9 @@
     background: #FFFFFF;
     border-radius: 8px;
     padding: 20px;
+    .llp-link-underlined{
+        text-transform: uppercase;
+    }
 
     &__wraper {
         display: grid;
@@ -1158,6 +1163,12 @@
         box-shadow: none;
         border: none;
         border-radius: 12px;
+    }
+
+    .modal-dialog {
+        min-height: calc(100vh - 60px);
+        align-items: center;
+        display: flex;
     }
 
     .modal-lg {
@@ -1259,17 +1270,58 @@
                 text-transform: uppercase;
                 color: #2C2C2C;
                 padding: 0px 20px 20px;
-                display: grid;
-                grid-template-columns: 28px 1fr;
-                grid-gap: 10px;
-                align-items: center;
-                justify-content: center;
+                width: 100%;
+
+                .inner-wrap {
+                    display: grid;
+                    grid-template-columns: 28px 1fr;
+                    grid-gap: 10px;
+                    align-items: center;
+                    justify-content: center;
+                }
 
                 .icon {
                     display: flex;
 
                     img {
                         width: 100%;
+                    }
+                }
+
+                &:before {
+                    content: '';
+                    height: 6px;
+                    width: 100%;
+                    background: #00A6CA;
+                    position: absolute;
+                    bottom: 0px;
+                    z-index: 2;
+                    transition: left 0.3s ease-in-out;
+                    bottom: -1px;
+                    left: 0;
+                }
+
+                &:after {
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-bottom: 10px solid #00A6CA;
+                    position: absolute;
+                    bottom: 5px;
+                    left: calc(50% - 10px);
+                }
+            }
+
+            &:not(.active) {
+                .nav-link {
+                    &:after {
+                        border-bottom: 10px solid transparent;
+                    }
+
+                    &:before {
+                        background-color: transparent;
                     }
                 }
             }
@@ -1359,6 +1411,12 @@
     }
 
     @media(max-width:991.98px) {
+        .modal-content {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
         &-header {
             .close {
                 right: 20px;
@@ -1378,7 +1436,7 @@
                 .llp-timeline {
                     .timeline-content {
                         .title {
-                            font-size: 16px;
+                            font-size: 14px;
                             margin-bottom: 6px;
                         }
                     }
@@ -1388,23 +1446,44 @@
 
         .nav-pills {
             padding-top: 66px;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left: 20px;
+            padding-right: 20px;
 
             .tab-indicator {
-                max-width: 50%;
+                max-width: 100%;
             }
 
             .nav-item {
+                max-width: 100%;
+
+                .nav-link {
+                    padding: 0px 0px 14px;
+                    white-space: nowrap;
+                    .inner-wrap{
+                        grid-template-columns: 18px 1fr;
+                    }
+                }
+
                 &:not(:last-child) {
                     &:after {
                         display: none;
                     }
-                }
 
-                .nav-link {
-                    padding: 0px 10px 14px;
-                    grid-template-columns: 18px 1fr;
+                    .nav-link {
+                        padding-right: 10px;
+                    }
                 }
             }
+        }
+
+        .modal-dialog {
+            min-height: calc(100vh - 20px);
+            margin-left: 20px;
+            margin-right: 20px;
         }
     }
 }
@@ -1435,3 +1514,144 @@
         }
     }
 }
+
+//FAQ section
+.faq-section {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background: #f6f7fc;
+    &__wraper {
+      .heading {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 44px;
+        text-align: center;
+        letter-spacing: -0.01em;
+        color: #2c2c2c;
+        margin-bottom: 30px;
+      }
+      .panel-group {
+        margin: 0 auto;
+        .panel {
+          border: none;
+          box-shadow: none;
+          border-radius: 0;
+          background: #f6f7fc;
+          margin-top: 0px;
+          &:not(:last-child) {
+            margin-bottom: 1 0px;
+            border-bottom: 1px solid #dddddd;
+          }
+          .panel-heading {
+            box-shadow: none;
+            padding: 10px 21px 10px 0px;
+            background: #f6f7fc;
+            border: none;
+            cursor: pointer;
+            .panel-title {
+              position: relative;
+              padding-left: 35px;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 24px;
+              letter-spacing: 0.02em;
+              color: #2c2c2c;
+              &:before {
+                content: "";
+                height: 22px;
+                width: 22px;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                background-repeat: no-repeat;
+                background-size: contain;
+              }
+            }
+            &:not(.show) {
+              .panel-title {
+                &:before {
+                  background-image: url(./images/faq-open.svg);
+                }
+              }
+            }
+            &.show {
+              .panel-title {
+                &:before {
+                  background-image: url(./images/faq-close.svg);
+                }
+              }
+            }
+          }
+          .faq-content {
+            padding: 0px 35px 20px;
+            background: #f6f7fc;
+            border: none;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.02em;
+            color: #707070;
+            ul {
+              margin-bottom: 0px;
+              li {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0.02em;
+                position: relative;
+                padding-left: 26px;
+                margin-bottom: 0px;
+                &:before {
+                  content: "";
+                  position: absolute;
+                  left: 5px;
+                  top: 8px;
+                  height: 4px;
+                  width: 4px;
+                  background: #707070;
+                  border-radius: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 992px) {
+      padding-bottom: 20px;
+      &__wraper {
+        .panel-group {
+          max-width: 100%;
+          .panel {
+            .panel-heading {
+              padding: 20px 0px;
+              .panel-title {
+                padding-left: 29px;
+                &:before {
+                  height: 19px;
+                  width: 19px;
+                  top: 1px;
+                }
+              }
+              &.show {
+                padding-bottom: 10px;
+              }
+            }
+            .faq-content {
+              font-size: 14px;
+              line-height: 24px;
+              padding: 0px 28px 20px;
+              ul {
+                li {
+                  font-size: 14px;
+                  line-height: 24px;
+                }
+              }
+            }
+          }
+        }
+        .heading {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
