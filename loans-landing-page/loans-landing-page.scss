@@ -1527,8 +1527,9 @@
 //FAQ section
 .faq-section {
     padding-top: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
     background: #f6f7fc;
+    font-family: "Intro";
 
     &__wraper {
         .heading {
@@ -1538,7 +1539,7 @@
             text-align: center;
             letter-spacing: -0.01em;
             color: #2c2c2c;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .panel-group {
@@ -1640,7 +1641,7 @@
     }
 
     @media (max-width: 992px) {
-        padding-bottom: 20px;
+        padding-bottom: 10px;
 
         &__wraper {
             .panel-group {
@@ -1682,6 +1683,8 @@
 
             .heading {
                 margin-bottom: 10px;
+                font-size: 24px;
+                line-height: 30px;
             }
         }
     }
@@ -1772,7 +1775,8 @@
                     bottom: 0px;
                     width: 100%;
                     overflow: hidden;
-                    img{
+
+                    img {
                         width: calc(100% + 50px);
                     }
 
@@ -1818,7 +1822,8 @@
 
             .left-side {
                 margin-top: -35px;
-                .list-title{
+
+                .list-title {
                     margin: auto;
                     margin-bottom: 20px;
                 }
@@ -1865,6 +1870,7 @@
     @media(max-width:1199.98px) {
         grid-template-columns: 1fr 1fr;
     }
+
     @media(max-width:767.98px) {
         grid-gap: 20px 10px;
     }
