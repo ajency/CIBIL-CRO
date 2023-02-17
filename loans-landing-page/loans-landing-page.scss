@@ -149,7 +149,7 @@
     text-decoration: none !important;
     font-family: "Intro";
 
-    .bordered {
+    &.bordered {
         background: #FFFFFF;
         border: 1px solid #F16E00 !important;
     }
@@ -875,7 +875,7 @@
             }
 
             .llp-button[type=submit] {
-                margin-top: 26px;
+                margin-top: 30px;
             }
 
             .input-group {
@@ -951,9 +951,9 @@
             label {
                 position: relative;
 
-                &.required {
+                /* &.required {
                     &::after {
-                        content: 'Required';
+                        content: '*';
                         position: absolute;
                         right: 0;
                         bottom: 0px;
@@ -964,7 +964,7 @@
                         letter-spacing: 0.02em;
                         color: #2C2C2C;
                     }
-                }
+                } */
             }
 
             //autofill
@@ -1167,8 +1167,8 @@
     }
 }
 
-.modal-backdrop {
-    opacity: .6;
+.modal-backdrop.in {
+    opacity: .7;
     background: #000000;
 }
 
@@ -1287,8 +1287,8 @@
                 width: 100%;
 
                 .inner-wrap {
-                    display: grid;
-                    grid-template-columns: 28px 1fr;
+                    display: flex;
+                    //grid-template-columns: 28px 1fr;
                     grid-gap: 10px;
                     align-items: center;
                     justify-content: center;
@@ -1296,6 +1296,7 @@
 
                 .icon {
                     display: flex;
+                    width: 28px;
 
                     img {
                         width: 100%;
@@ -1479,7 +1480,11 @@
                     white-space: nowrap;
 
                     .inner-wrap {
-                        grid-template-columns: 18px 1fr;
+
+                        //grid-template-columns: 18px 1fr;
+                        .icon {
+                            width: 18px;
+                        }
                     }
                 }
 
@@ -1692,6 +1697,13 @@
                 font-size: 24px;
                 line-height: 30px;
             }
+        }
+    }
+
+    @media(min-width:992px) {
+        .faq-inner {
+            max-width: calc(100% - 200px);
+            margin: auto;
         }
     }
 }
@@ -1907,7 +1919,7 @@
 
     @media(max-width:768.98px) {
         margin-top: 40px;
-        padding-bottom:40px;
+        padding-bottom: 40px;
 
         &__wraper {
             .heading {
@@ -1937,6 +1949,8 @@
                 text-underline-offset: 4px;
                 position: relative;
                 gap: 10px;
+                border: none !important;
+
                 &:after {
                     content: '';
                     display: block;
@@ -1952,7 +1966,8 @@
                     top: 7px;
                 }
             }
-            .blogs-listing{
+
+            .blogs-listing {
                 grid-template-columns: 1fr;
             }
         }
@@ -1966,6 +1981,8 @@
 
     &__wraper {
         height: 100%;
+        display: grid;
+        grid-template-rows: 173px 1fr;
 
         .image-container {
             height: 173px;
@@ -2001,7 +2018,7 @@
                 display: block;
                 width: 10px;
                 height: 10px;
-                background-image: url(./images/right-arrow-dark.svg);
+                background-image: url(./images/right-arrow-orange.svg);
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: right;
@@ -2011,6 +2028,9 @@
 
         .content {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
     }
 
@@ -2020,18 +2040,20 @@
         .llp-blog-card__wraper {
             .llp-link-underlined {
                 color: #000000 !important;
-
-                &:after {
-                    background-image: url(./images/right-arrow-orange.svg);
-                }
             }
         }
     }
 
     @media(max-width:768.98px) {
         &__wraper {
-            .blog-title{
+            .blog-title {
                 margin-bottom: 20px;
+            }
+
+            .llp-link-underlined {
+                &:after {
+                    background-image: url(./images/right-arrow-dark.svg);
+                }
             }
         }
     }
