@@ -147,6 +147,12 @@
     text-transform: uppercase;
     color: #2C2C2C !important;
     text-decoration: none !important;
+    font-family: "Intro";
+
+    .bordered {
+        background: #FFFFFF;
+        border: 1px solid #F16E00 !important;
+    }
 }
 
 //highlight underline
@@ -1873,5 +1879,160 @@
 
     @media(max-width:767.98px) {
         grid-gap: 20px 10px;
+    }
+}
+
+//blogs listing
+.llp-blogs-section {
+    margin-top: 57px;
+    padding-bottom: 80px;
+
+    &__wraper {
+        display: grid;
+        grid-template-columns: 25% 1fr;
+        grid-gap: 20px 120px;
+
+        .blogs-listing {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+    }
+
+    @media(max-width:991.98px) {
+        &__wraper {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media(max-width:768.98px) {
+        margin-top: 40px;
+        padding-bottom:40px;
+
+        &__wraper {
+            .heading {
+                font-size: 24px;
+                line-height: 30px;
+            }
+
+            .desc {
+                color: #000000;
+                margin-bottom: 20px !important;
+            }
+
+            .llp-button.llp-button.bordered {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                text-align: center;
+                letter-spacing: 0.02em;
+                text-decoration-line: underline;
+                color: #00A6CA !important;
+                background: transparent;
+                padding: 0px;
+                height: auto;
+                width: auto;
+                text-transform: capitalize;
+                text-decoration: underline !important;
+                text-underline-offset: 4px;
+                position: relative;
+                gap: 10px;
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 10px;
+                    height: 14px;
+                    background-image: url(./images/right-arrow-blue.svg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: right;
+                    transition: all 0.2s ease-in-out;
+                    position: absolute;
+                    right: -18px;
+                    top: 7px;
+                }
+            }
+            .blogs-listing{
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+.llp-blog-card {
+    font-family: 'Intro';
+    box-shadow: 0px 0px 0px rgba(0, 112, 148, 0);
+    transition: all 0.2s ease-in-out;
+
+    &__wraper {
+        height: 100%;
+
+        .image-container {
+            height: 173px;
+            overflow: hidden;
+            width: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .blog-title {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 23px;
+            color: #000000;
+            margin-bottom: 30px;
+        }
+
+        .llp-link-underlined {
+            color: #2c2c2c !important;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease-in-out;
+
+            &:after {
+                content: '';
+                display: block;
+                width: 10px;
+                height: 10px;
+                background-image: url(./images/right-arrow-dark.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: right;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+
+        .content {
+            padding: 20px;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0px 20px 20px rgba(0, 112, 148, 0.04);
+
+        .llp-blog-card__wraper {
+            .llp-link-underlined {
+                color: #000000 !important;
+
+                &:after {
+                    background-image: url(./images/right-arrow-orange.svg);
+                }
+            }
+        }
+    }
+
+    @media(max-width:768.98px) {
+        &__wraper {
+            .blog-title{
+                margin-bottom: 20px;
+            }
+        }
     }
 }
