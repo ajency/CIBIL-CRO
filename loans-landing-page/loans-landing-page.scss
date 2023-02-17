@@ -1497,6 +1497,11 @@
                         padding-right: 10px;
                     }
                 }
+                &:not(:first-child){
+                    .nav-link{
+                        padding-left: 10px;
+                    }
+                }
             }
         }
 
